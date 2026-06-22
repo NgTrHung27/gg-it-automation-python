@@ -110,27 +110,27 @@ import csv
 
 # PHẦN 1: TẠO FILE CSV DÙNG DẤU CHẤM PHẨY RE-FORMAT (BIẾN THỂ DIALECT)
 # Giả lập file CSV xuất ra từ một hệ thống sử dụng dấu ';' thay vì dấu ','
-custom_csv_data = """Name;Department;Salary
-Aisha Khan;Engineering;80000
-Jules Lee;Marketing;67000
-Queenie Corbit;Human Resources;90000"""
+# custom_csv_data = """Name;Department;Salary
+# Aisha Khan;Engineering;80000
+# Jules Lee;Marketing;67000
+# Queenie Corbit;Human Resources;90000"""
 
-with open("custom_employees.csv", "w", encoding="utf-8") as f:
-    f.write(custom_csv_data.strip())
+# with open("custom_employees.csv", "w", encoding="utf-8") as f:
+#     f.write(custom_csv_data.strip())
 
-# PHẦN 2: ĐỌC FILE VỚI CẤU HÌNH DELIMITER TÙY BIẾN VÀ LỆNH NEXT()
-print("--- CHẠY SCRIPT.PY: ĐỌC CSV TÙY BIẾN ---")
+# # PHẦN 2: ĐỌC FILE VỚI CẤU HÌNH DELIMITER TÙY BIẾN VÀ LỆNH NEXT()
+# print("--- CHẠY SCRIPT.PY: ĐỌC CSV TÙY BIẾN ---")
 
-with open("custom_employees.csv", "r", encoding="utf-8") as f:
-    # Khai báo bộ đọc kèm cấu hình delimiter=';' để Python không bị nhận diện sai cột
-    reader = csv.reader(f, delimiter=';')
+# with open("custom_employees.csv", "r", encoding="utf-8") as f:
+#     # Khai báo bộ đọc kèm cấu hình delimiter=';' để Python không bị nhận diện sai cột
+#     reader = csv.reader(f, delimiter=';')
 
-    # Sử dụng hàm next() để hớt dòng đầu tiên (Header row) ra ngoài
-    header = next(reader)
-    print("Dòng tiêu đề bóc tách riêng: {}".format(header))
-    print("-" * 40)
+#     # Sử dụng hàm next() để hớt dòng đầu tiên (Header row) ra ngoài
+#     header = next(reader)
+#     print("Dòng tiêu đề bóc tách riêng: {}".format(header))
+#     print("-" * 40)
 
-    # Vòng lặp for lúc này chỉ duyệt qua các dòng dữ liệu thô, không bị dính dòng tiêu đề
-    for row in reader:
-        name, department, salary = row
-        print("Nhân viên: {} | Phòng: {} | Lương: {}".format(name, department, salary))
+#     # Vòng lặp for lúc này chỉ duyệt qua các dòng dữ liệu thô, không bị dính dòng tiêu đề
+#     for row in reader:
+#         name, department, salary = row
+#         print("Nhân viên: {} | Phòng: {} | Lương: {}".format(name, department, salary))
