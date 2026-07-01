@@ -1,5 +1,6 @@
 import os
-import csv # Thêm thư viện csv
+import sys
+# import csv # Thêm thư viện csv
 
 # if os.path.exists("novel.txt"):
 #     os.remove("novel.txt")
@@ -106,7 +107,7 @@ import csv # Thêm thư viện csv
 # with open('by_department.csv', 'r', encoding='utf-8') as f:
 #     print(f.read())
 
-import csv
+# import csv
 
 # PHẦN 1: TẠO FILE CSV DÙNG DẤU CHẤM PHẨY RE-FORMAT (BIẾN THỂ DIALECT)
 # Giả lập file CSV xuất ra từ một hệ thống sử dụng dấu ';' thay vì dấu ','
@@ -134,3 +135,29 @@ import csv
 #     for row in reader:
 #         name, department, salary = row
 #         print("Nhân viên: {} | Phòng: {} | Lương: {}".format(name, department, salary))
+
+
+# sys.stdout.write("Đây là dữ liệu xuất ra luồng STDOUT hợp lệ.\n")
+# print(os.name)
+# print("Thư mục làm việc hiện hành (PWD):", os.getcwd())
+
+def to_seconds(hours, minuties, seconds):
+        return hours * 3600 + minuties * 60 + seconds
+
+def main():
+    cont = "y"
+    
+    while cont.lower() == "y":
+        hours = int(input("Enter your hour: "))
+        minuties = int(input("Enter your minutes:"))
+        seconds = int(input("Enter your seconds: "))
+
+        total_Second = to_seconds(hours,minuties, seconds)
+        print("That's {} seconds\n".format(total_Second))
+
+        cont = input("Do you want to continue? (y/n): ")
+
+    print ("Good bye")
+
+if __name__ == "__main__":
+    main()
